@@ -563,6 +563,12 @@ namespace SuperSocket.SocketBase
 
                 if (requestInfo != null)
                 {
+                    /*
+可以在此处开启线程。但错误处理就得改一下。
+错误处理改为：永远不关闭Session，将错误信息返回给客户。
+在客户端得做相应准备来接收错误信息。
+一般的错误格式为：你的请求发生了错误，已记录在服务器的LOG中，请联系开发人员进行跟踪处理。
+                     */
                     try
                     {
                         AppServer.ExecuteCommand(this, requestInfo);
